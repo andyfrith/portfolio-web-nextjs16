@@ -1,0 +1,9 @@
+---
+alwaysApply: true
+---
+
+- Favor React Server Components (RSC) over extensive use of 'use client', 'useEffect', and 'setState'.
+- Wrap client components in <Suspense> with a simple fallback.
+- Use `next/dynamic` with `ssr: false` for client-only rendering of non-critical components.
+- Optimize images using `next/image`, specifying sizes, using `loading="lazy"`, and preferring WebP.
+- Optimize Web Vitals like LCP, CLS, and FID.
