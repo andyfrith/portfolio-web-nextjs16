@@ -1,0 +1,48 @@
+name: "Deploy to GCP Cloud Run"
+
+on:
+  workflow_dispatch:
+
+env:
+  PROJECT_ID: "portfolio-web-nextjs16"
+  REGION: "europe-west1"
+  SERVICE: "portfolio-web-nextjs16"
+
+jobs:
+  deploy:
+    runs-on: "ubuntu-latest"
+
+    permissions:
+      contents: "read"
+      id-token: "write"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332" # actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: "lts/*"
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Next.js Application
+        run: npm run build
+
+      - name: "Google Auth"
+        uses: "google-github-actions/auth@v3"
+        with:
+          credentials_json: "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}"
+
+      - name: "Deploy to Cloud Run"
+        uses: "google-github-actions/deploy-cloudrun@33553064113a37d688aa6937bacbdc481580be17" # google-github-actions/deploy-cloudrun@v2
+        with:
+          service: "${{ env.SERVICE }}"
+          region: "${{ env.REGION }}"
+          source: "./"
+
+      - name: "Show output"
+        run: |-
+          echo ${{ steps.deploy.outputs.url }}
