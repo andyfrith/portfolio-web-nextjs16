@@ -1,0 +1,52 @@
+{
+  "Turngate": {
+    "id": 6,
+    "company": {
+      "name": "Turngate",
+      "city": "Ellicott City",
+      "state": "MD",
+      "industries": [{ "id": 1, "summary": "Cybersecurity" }],
+      "size": "11-50"
+    },
+    "role": "Senior Front-End Engineer",
+    "dates": "03.2025 - 09.2025",
+    "summary": "As Senior Front-End Engineer, I collaborated with other teammates in the design and implementation of scalable web applications, dedicated to transforming complex data into actionable insights. Engineered UI technology utilizing React, TypeScript and TanStack open source software.",
+    "results": [
+      {
+        "id": 1,
+        "summary": "Championed development and adoption of TanStack Router route-based architcture."
+      },
+      {
+        "id": 2,
+        "summary": "Contributed to innovative development, leveraging latest technologies, enhancing platform functionality."
+      },
+      {
+        "id": 3,
+        "summary": "Responsible for React UI development using TanStack Query, Material UI, Material React Table."
+      }
+    ],
+    "technicalSkills": {
+      "languages": ["JavaScript", "TypeScript", "HTML", "CSS"],
+      "frameworks": ["React"],
+      "tools": ["Git", "Tailwind", "TanStack Query", "TanStack Router", "Nx"],
+      "architectures": ["Single-Page Applications (SPA)", "Microservices"]
+    },
+    "skills": [
+      "Material UI",
+      "React",
+      "TypeScript",
+      "SPA",
+      "Microservices",
+      "iOS",
+      "Playwright",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Git",
+      "Tailwind",
+      "TanStack Query",
+      "TanStack Router",
+      "Nx"
+    ]
+  }
+}

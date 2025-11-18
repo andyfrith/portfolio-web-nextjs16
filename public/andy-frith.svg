@@ -1,0 +1,29 @@
+<svg width="480" height="120" viewBox="0 0 480 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Defines the black background -->
+  <rect width="100%" height="100%" fill="black" />
+
+  <!-- Imports the 'Inter' font from Google Fonts -->
+  <defs>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800');
+    </style>
+  </defs>
+
+  <!-- The text "Andy Frith" -->
+  <text
+    x="50%"
+    y="55%"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    style="
+      font-family: 'Inter', sans-serif;
+      font-size: 82px;
+      font-weight: 800;
+      fill: white;
+      letter-spacing: -0.04em;
+    "
+  >
+    <!-- The tspan elements are used to create the overlapping effect -->
+    <tspan>Andy F</tspan><tspan dx="-0.22em">r</tspan><tspan>ith</tspan>
+  </text>
+</svg>

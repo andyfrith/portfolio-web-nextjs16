@@ -1,0 +1,66 @@
+"use client";
+
+import { useTheme } from "next-themes";
+import { Moon, Sun, Monitor } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { useLayoutEffect, useState } from "react";
+
+export interface HeaderProps {
+  className?: string;
+}
+
+export function Header({ className }: HeaderProps) {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // This useLayoutEffect is necessary to prevent hydration mismatches with next-themes
+  // The mounted state ensures the same HTML structure is rendered on server and client
+  useLayoutEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
+
+  const themes = [
+    { value: "light", icon: Sun, label: "Light mode" },
+    { value: "system", icon: Monitor, label: "System theme" },
+    { value: "dark", icon: Moon, label: "Dark mode" },
+  ] as const;
+
+  // theme can be "light", "dark", or "system" (user preference)
+  // Use undefined fallback to handle initial render before hydration
+  const currentTheme = theme || "system";
+
+  return (
+    <header className={cn("w-full px-16 py-4 ", className)}>
+      <div className="mx-auto flex max-w-3xl items-center justify-between">
+        <div
+          className="flex items-center gap-1 rounded-full border border-zinc-200 bg-zinc-50 p-1 dark:border-zinc-800 dark:bg-zinc-900"
+          role="group"
+          aria-label="Theme selector"
+        >
+          {themes.map(({ value, icon: Icon, label }) => {
+            const isActive = mounted && currentTheme === value;
+            return (
+              <button
+                key={value}
+                onClick={() => setTheme(value)}
+                disabled={!mounted}
+                className={cn(
+                  "flex items-center justify-center rounded-full p-2 transition-all",
+                  isActive
+                    ? "bg-white text-zinc-900 shadow-sm dark:bg-zinc-800 dark:text-zinc-100"
+                    : "text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-300",
+                  !mounted && "opacity-50"
+                )}
+                aria-label={label}
+                aria-pressed={isActive}
+              >
+                <Icon className="size-4" />
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </header>
+  );
+}
