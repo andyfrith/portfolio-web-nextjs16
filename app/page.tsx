@@ -19,7 +19,9 @@ export default function Home() {
               AI technology for successful outcomes.{" "}
             </p>
           </div>
-          <NavigationMain />
+          <div className="hidden sm:block">
+            <NavigationMain />
+          </div>
         </div>
         <section>
           <Traits />

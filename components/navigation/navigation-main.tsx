@@ -22,7 +22,11 @@ const navItems = [
   },
 ];
 
-export function NavigationMain() {
+export interface NavigationMainProps {
+  orientation?: "vertical" | "horizontal";
+}
+
+export function NavigationMain({ orientation = "vertical" }: NavigationMainProps) {
   function handleItemClick(id: string, href?: string) {
     if (href) {
       console.log("Navigate to:", href);
@@ -31,7 +35,11 @@ export function NavigationMain() {
 
   return (
     <div>
-      <Navigation items={navItems} onItemClick={handleItemClick} />
+      <Navigation
+        items={navItems}
+        onItemClick={handleItemClick}
+        orientation={orientation}
+      />
     </div>
   );
 }

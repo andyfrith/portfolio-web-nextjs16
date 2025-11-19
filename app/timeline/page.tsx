@@ -21,7 +21,9 @@ export default function TimelinePage() {
               culture of extreme collaboration.
             </p>
           </div>
-          <NavigationMain />
+          <div className="hidden sm:block">
+            <NavigationMain />
+          </div>
         </div>
         <section>
           <Timeline data={experiencesData} />
