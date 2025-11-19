@@ -41,15 +41,15 @@ async function Traits() {
             key={item.title}
             className="flex flex-col items-center justify-center text-center"
           >
-            <div className="bg-primary-100 dark:bg-primary-900 mb-4 flex size-10 items-center justify-center rounded-full p-1.5 text-green-700 lg:size-12">
+            <div className="bg-primary-100 dark:bg-primary-900 mb-4 flex size-10 items-center justify-center rounded-full p-1.5 lg:size-12 text-(--text-green-color) dark:text-(--text-green-color-dark)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
-                fill="none"
-                stroke="#d5ffe1"
-                strokeWidth="2"
+                fill="currentColor"
+                stroke="white"
+                strokeWidth="1"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >

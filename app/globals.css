@@ -6,7 +6,8 @@
   --foreground: #8c8c8d;
   --text-color: #8c8c8d;
   --text-header-color: #8c8c8d;
-  --text-green-color: #d5ffe1;
+  --text-green-color: #91daa6;
+  /* #d5ffe1; */
 }
 
 @theme inline {

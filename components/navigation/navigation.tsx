@@ -44,7 +44,7 @@ function NavigationItemComponent({
           "relative block w-full py-1.5 text-left transition-colors",
           level === 0 ? "pl-0" : level === 1 ? "pl-4" : "pl-8",
           isActive
-            ? "font-semibold text-[#d5ffe1]"
+            ? "font-semibold text-(--text-green-color) dark:text-(--text-green-color-dark)"
             : "font-normal text-zinc-400 hover:text-zinc-300"
         )}
       >

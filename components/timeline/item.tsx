@@ -32,11 +32,12 @@ export default function Item({ item }: { item: ExperienceType }) {
         borderRight: "0.4rem solid #9ca3af",
       }}
       date={item.dates}
-      icon={<Star />}
+      icon={
+        <Star className="text-(--text-green-color) dark:text-(--text-green-color-dark)" />
+      }
       iconStyle={{
         background: "grey",
         fontSize: "1.5rem",
-        color: "#d5ffe1",
       }}
     >
       <motion.section

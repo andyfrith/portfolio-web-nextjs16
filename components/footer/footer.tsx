@@ -58,10 +58,10 @@ export function Footer({
                 Leading & Empowering Teams to Deliver Secure, High-Performance
               </p>
               <p>
-                Software Solutions | Architecting Future-Proof Systems with AI &
+                Software Solutions. Architecting Future-Proof Systems with AI &
               </p>
               <p>
-                Exceptional UX | Innovative UI Engineer in React & JavaScript
+                Exceptional UX. Innovative UI Engineer in React & JavaScript
               </p>
             </div>
           </div>
