@@ -4,7 +4,7 @@ export default function Bio() {
   return (
     <div className="flex min-h-screen items-center justify-center font-sans">
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start">
-        <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-(--text-green-color)">
+        <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-(--text-green-color) dark:text-(--text-green-color-dark)">
           bio.
         </h1>
         <div className="flex">
