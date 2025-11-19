@@ -31,7 +31,8 @@ export default function Item({ item }: { item: ExperienceType }) {
       contentArrowStyle={{
         borderRight: "0.4rem solid #9ca3af",
       }}
-      date={item.dates}
+      dateClassName="color:var(--color-gray-600) bold"
+      // date={item.dates}
       icon={
         <Star className="text-(--text-green-color) dark:text-(--text-green-color-dark)" />
       }
@@ -54,7 +55,7 @@ export default function Item({ item }: { item: ExperienceType }) {
             setTimeOfLastClick(Date.now());
           }}
         >
-          <Header role={item.role} />
+          <Header role={item.role} dates={item.dates} />
         </Link>
         <Company company={item.company} />
         <Summary summary={item.summary} />

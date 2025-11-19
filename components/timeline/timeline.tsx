@@ -11,6 +11,7 @@ function Timeline({ data }: { data: Array<ExperienceType> }) {
     <>
       <VerticalTimeline
         className="vertical-timeline-component w-full! mt-4!"
+        layout="1-column-left"
         lineColor="grey"
       >
         {data.map((item) => (
