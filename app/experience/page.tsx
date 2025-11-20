@@ -1,11 +1,13 @@
 import { NavigationMain } from "@/components/navigation/navigation-main";
 import { Timeline } from "@/components/timeline/timeline";
 import { experiencesData } from "@/data/data";
+import { Rotate3d } from "lucide-react";
 
-export default function TimelinePage() {
+export default function ExperiencePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center ">
+    <div className="flex min-h-screen items-center justify-center">
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start">
+        <Rotate3d className="text-(--text-gray-color) dark:text-(--text-gray-color-dark) mb-4 w-10 h-10 opacity-20 sm:hidden" />
         <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-(--text-green-color) dark:text-(--text-green-color-dark)">
           experience.
         </h1>

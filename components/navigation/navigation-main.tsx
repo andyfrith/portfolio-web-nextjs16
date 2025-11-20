@@ -11,7 +11,7 @@ const navItems = [
   {
     id: "experience",
     label: "experience.",
-    href: "/timeline",
+    href: "/experience",
     children: [],
   },
   {
@@ -26,7 +26,9 @@ export interface NavigationMainProps {
   orientation?: "vertical" | "horizontal";
 }
 
-export function NavigationMain({ orientation = "vertical" }: NavigationMainProps) {
+export function NavigationMain({
+  orientation = "vertical",
+}: NavigationMainProps) {
   function handleItemClick(id: string, href?: string) {
     if (href) {
       console.log("Navigate to:", href);

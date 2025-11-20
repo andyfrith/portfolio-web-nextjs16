@@ -64,8 +64,9 @@ export function Header({ className }: HeaderProps) {
   }
 
   return (
-    <header className={cn("w-full px-16 py-4 ", className)}>
-      <div className="mx-auto flex max-w-3xl items-center sm:justify-between">
+    <header className={cn("w-full py-4 ", className)}>
+      <div className="flex items-center justify-center">
+        {/* <div className="mx-auto flex max-w-3xl items-center sm:justify-between"> */}
         <div className="flex items-center gap-4 sm:hidden">
           {renderThemeSelector()}
           <NavigationMain orientation="horizontal" />

@@ -53,15 +53,19 @@ export function Footer({
               <ShieldCheck className="size-4" />
               <span className="text-sm">He / Him / Mr / Sir / Master</span>
             </div>
-            <div className="flex flex-col gap-0 text-sm">
+            <div className="md:flex hidden flex-col gap-0 text-sm">
               <p>
-                Leading & Empowering Teams to Deliver Secure, High-Performance
+                Leading & empowering teams to deliver secure, high-performance
+                software solutions.
               </p>
+              <p>Architecting future-proof systems with AI & exceptional UX.</p>
+              <p>Innovative UI engineer in React & JavaScript</p>
+            </div>
+            <div className="md:hidden flex flex-col gap-0 text-sm">
               <p>
-                Software Solutions. Architecting Future-Proof Systems with AI &
-              </p>
-              <p>
-                Exceptional UX. Innovative UI Engineer in React & JavaScript
+                Leading & empowering teams to deliver secure, high-performance
+                software solutions. Architecting future-proof systems with AI &
+                exceptional UX. Innovative UI engineer in React & JavaScript.
               </p>
             </div>
           </div>
