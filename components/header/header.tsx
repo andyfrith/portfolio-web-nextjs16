@@ -29,7 +29,30 @@ export function Header({ className }: HeaderProps) {
 
   // theme can be "light", "dark", or "system" (user preference)
   // Use undefined fallback to handle initial render before hydration
-  const currentTheme = theme || "system";
+  const currentTheme = theme || "dark";
+
+  function renderThemeToggle() {
+    // For toggle, treat "system" as dark (since default is dark)
+    // Only show light icon when explicitly set to light
+    const isDark = mounted && currentTheme !== "light";
+    return (
+      <button
+        onClick={() => setTheme(isDark ? "light" : "dark")}
+        disabled={!mounted}
+        className={cn(
+          "flex items-center justify-center rounded-full border border-zinc-200 bg-zinc-50 p-2 transition-all dark:border-zinc-800 dark:bg-zinc-900",
+          "text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-300",
+          isDark &&
+            "bg-white text-zinc-900 shadow-sm dark:bg-zinc-800 dark:text-zinc-100",
+          !mounted && "opacity-50"
+        )}
+        aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+        aria-pressed={isDark}
+      >
+        {isDark ? <Moon className="size-4" /> : <Sun className="size-4" />}
+      </button>
+    );
+  }
 
   function renderThemeSelector() {
     return (
@@ -68,7 +91,7 @@ export function Header({ className }: HeaderProps) {
       <div className="flex items-center justify-center">
         {/* <div className="mx-auto flex max-w-3xl items-center sm:justify-between"> */}
         <div className="flex items-center gap-4 sm:hidden">
-          {renderThemeSelector()}
+          {renderThemeToggle()}
           <NavigationMain orientation="horizontal" />
         </div>
         <div className="hidden sm:block">{renderThemeSelector()}</div>
