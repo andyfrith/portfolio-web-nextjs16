@@ -98,8 +98,8 @@ export default function Bio() {
                   <rect width="4" height="12" x="2" y="9" />
                   <circle cx="4" cy="4" r="2" />
                 </svg>
-                <a href="https://www.linkedin.com/in/afrith-denver/">
-                  https://www.linkedin.com/in/afrith-denver/
+                <a href="https://linkedin.com/in/goodapplemedia/">
+                  https://linkedin.com/in/goodapplemedia/
                 </a>
               </div>
             </li>
