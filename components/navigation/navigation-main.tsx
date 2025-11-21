@@ -20,6 +20,12 @@ const navItems = [
     href: "/bio",
     children: [],
   },
+  // {
+  //   id: "ai",
+  //   label: "ai.",
+  //   href: "/ai",
+  //   children: [],
+  // },
 ];
 
 export interface NavigationMainProps {

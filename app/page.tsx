@@ -1,31 +1,37 @@
-import { NavigationMain } from "@/components/navigation/navigation-main";
-import Traits from "@/components/traits/traits";
+import { readdir, readFile } from "fs/promises";
+import { join } from "path";
+import matter from "gray-matter";
+import Hello from "@/components/hello/hello";
+import { Trait } from "@/lib/types";
 
-export default function Home() {
+async function getTraits(): Promise<Trait[]> {
+  const releasesDirectory = join(process.cwd(), "content/traits");
+  const fileNames = await readdir(releasesDirectory);
+
+  const traits = await Promise.all(
+    fileNames
+      .filter((fileName) => fileName.endsWith(".md"))
+      .map(async (fileName) => {
+        const filePath = join(releasesDirectory, fileName);
+        const fileContents = await readFile(filePath, "utf8");
+        const { data, content } = matter(fileContents);
+
+        return {
+          title: data.title as string,
+          content,
+        };
+      }),
+  );
+
+  return traits;
+}
+
+export default async function Home() {
+  const traits = await getTraits();
   return (
     <div className="flex min-h-screen items-center justify-center font-sans">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start">
-        <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-(--text-green-color) dark:text-(--text-green-color-dark)">
-          hello.
-        </h1>
-        <div className="flex">
-          <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-            <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight  dark:text-zinc-50">
-              better than AI.
-            </h1>
-            <p className="max-w-md text-lg leading-8">
-              Empowering teams to deliver secure, high-performance software &
-              exceptional UX. Human-led innovation while efficiently harnessing
-              AI technology for successful outcomes.{" "}
-            </p>
-          </div>
-          <div className="hidden sm:block">
-            <NavigationMain />
-          </div>
-        </div>
-        <section>
-          <Traits />
-        </section>
+      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between px-8 py-16 sm:items-start">
+        {traits && <Hello traits={traits} />}
       </main>
     </div>
   );

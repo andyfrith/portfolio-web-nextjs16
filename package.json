@@ -9,7 +9,10 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ai-sdk/google": "^2.0.40",
+    "@ai-sdk/react": "^2.0.98",
     "@radix-ui/react-collapsible": "^1.1.12",
+    "ai": "^5.0.98",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.24",
     "gray-matter": "^4.0.3",
@@ -21,7 +24,9 @@
     "react-intersection-observer": "^10.0.0",
     "react-markdown": "^10.1.0",
     "react-vertical-timeline-component": "^3.5.3",
-    "tailwind-merge": "^3.4.0"
+    "remark-gfm": "^4.0.1",
+    "tailwind-merge": "^3.4.0",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -31,6 +36,8 @@
     "@types/react-vertical-timeline-component": "^3.3.6",
     "eslint": "^9",
     "eslint-config-next": "16.0.3",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.7.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

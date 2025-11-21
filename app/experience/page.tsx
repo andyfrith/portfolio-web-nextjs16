@@ -1,36 +1,10 @@
-import { NavigationMain } from "@/components/navigation/navigation-main";
-import { Timeline } from "@/components/timeline/timeline";
-import { experiencesData } from "@/data/data";
-import { Rotate3d } from "lucide-react";
+import Experience from "@/components/experience/experience";
 
 export default function ExperiencePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start">
-        <Rotate3d className="text-(--text-gray-color) dark:text-(--text-gray-color-dark) mb-4 w-10 h-10 opacity-20 sm:hidden" />
-        <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-(--text-green-color) dark:text-(--text-green-color-dark)">
-          experience.
-        </h1>
-        <div className="flex">
-          <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-            <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight  dark:text-zinc-50">
-              better than AI.
-            </h1>
-            <p className="max-w-md text-lg leading-8">
-              Solving complex, multi-dimensional problems. Building
-              unforgettable, AI-powered user experiences with React, Next.js and
-              TypeScript. Driving transformative business results through a
-              culture of extreme collaboration.
-            </p>
-          </div>
-          <div className="hidden sm:block">
-            <NavigationMain />
-          </div>
-        </div>
-        <section>
-          <Timeline data={experiencesData} />
-        </section>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row"></div>
+    <div className="flex min-h-screen items-center justify-center font-sans">
+      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between px-8 py-16 sm:items-start">
+        <Experience />
       </main>
     </div>
   );
