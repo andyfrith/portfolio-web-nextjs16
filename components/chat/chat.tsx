@@ -79,7 +79,7 @@ export default function Chat() {
           setInput("");
         }}
       >
-        <motion.div
+        {/* <motion.div
           key="overview"
           className="mx-4 mt-5 max-w-[500px] md:mx-0"
           initial={{ opacity: 0, scale: 0.98 }}
@@ -94,7 +94,7 @@ export default function Chat() {
             rows={3}
             onChange={(e) => setInput(e.currentTarget.value)}
           />
-        </motion.div>
+        </motion.div> */}
       </form>
     </div>
   );
