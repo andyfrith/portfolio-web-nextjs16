@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import { NavigationMain } from "@/components/navigation/navigation-main";
-// import Chat from "../chat/chat";
-import { Overview } from "../chat/overview";
+import Chat from "../chat/chat";
 
 export default function AI() {
   return (
@@ -16,7 +15,7 @@ export default function AI() {
       transition={{ delay: 0.5 }}
     >
       <div className="flex">
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
+        <div className="flex min-w-md flex-col items-center gap-6 text-center sm:items-start sm:text-left">
           <h1 className="max-w-xs text-3xl leading-10 font-semibold tracking-tight text-(--text-green-color) dark:text-(--text-green-color-dark)">
             ai.
             <br />
@@ -33,8 +32,7 @@ export default function AI() {
         </div>
       </div>
       <section>
-        {/* <Chat /> */}
-        <Overview />
+        <Chat />
       </section>
       <div className="flex flex-col gap-4 text-base font-medium sm:flex-row"></div>
     </motion.div>

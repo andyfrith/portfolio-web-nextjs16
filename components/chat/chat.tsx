@@ -53,17 +53,19 @@ export default function Chat() {
 
   return (
     <div className="mx-auto flex w-full max-w-md flex-col">
-      <Overview />
-      <SuggestedActions
-        actions={SUGGESTED_ACTIONS}
-        onSelect={handleActionSelect}
-        selectedPrompt={input}
-      />
-
       <div
         ref={messagesContainerRef}
-        className="max-h-[60vh] space-y-4 overflow-y-auto px-4 py-4"
+        className="space-y-4 px-4 py-4"
+
+        // className="max-h-[60vh] space-y-4 overflow-y-auto px-4 py-4"
       >
+        <Overview>
+          <SuggestedActions
+            actions={SUGGESTED_ACTIONS}
+            onSelect={handleActionSelect}
+            selectedPrompt={input}
+          />
+        </Overview>
         {messages.map((message) => (
           <Message key={message.id} message={message} />
         ))}
