@@ -61,6 +61,7 @@ export default function Bio() {
         <ul className="list-inside list-disc pt-2">
           <li>Engineering & Product Management</li>
           <li>Frontend/ UI/ UX/ React Development</li>
+          <li>Mobile/ React Native Development</li>
           <li>Full-Stack Development (TypeScript, Node.js)</li>
         </ul>
         <p className="pt-5">
