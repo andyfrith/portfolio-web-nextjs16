@@ -43,6 +43,8 @@ export default function Chat() {
 
   useEffect(() => {
     scrollToBottom();
+    // Debug: log messages to see what's being received
+    // console.log("Messages updated:", JSON.stringify(messages, null, 2));
   }, [messages]);
 
   const handleActionSelect = (prompt: string) => {
